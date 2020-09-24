@@ -1,3 +1,31 @@
-.container--bg-red {
-    background-color: red;
+.body--bg-red {
+    background-color: #f24040;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.display {
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    margin-top: 50px;
+}
+
+.btn--color-blue {
+    background-color: blue;
+}
+
+.btn--color-yellow {
+    background-color: yellow;
+}
+
+.btn--color-green {
+    background-color: green;
 }
