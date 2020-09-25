@@ -123,18 +123,18 @@ body {
 
 
 .btn--color-blue {
-    background-color: blue;
+    background-color: #3e58da;
 }
 
 .btn--color-yellow {
-    background-color: yellow;
+    background-color: #ffc933;
 }
 
 .btn--color-green {
-    background-color: green;
+    background-color: #47d178;
 }
 
 .btn--color-black {
-    color: white;
-    background-color: black;
+    color: #FFF;
+    background-color: #000;
 }

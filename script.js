@@ -14,6 +14,9 @@ function divide(a, b) {
     return a/b;
 };
 
+let num1;
+let num2;
+
 function operate(operator, num1, num2) {
     let a = num1;
     let b = num2;
@@ -32,3 +35,6 @@ function operate(operator, num1, num2) {
             break;
     };
 };
+
+let result = getElementById('result');
+result.innerHTML = ;
