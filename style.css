@@ -11,36 +11,40 @@ body {
     background-color: #f24040;
 }
 
-.justify-center {
+.horizontal-center {
     justify-content: center;
-    align-items: center;
+}
+
+.items-center {
+    justify-items: center;
 }
 
 .container {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-    width: 1000px;
+    width: 800px;
     height: 1000px;
+    margin-top: 100px;
 }
 
 .display {
     grid-area: 1 / 1 / 5 / 1;
-    width: 200px;
-    height: 100px;
-    padding: 10px;
-    margin-bottom: 20px;
+    border: solid 2px black;
+    width: 100%;
+    height: 60px;
+    text-align: center;
 }
 
 .buttons {
-    margin-top: 20px;
+    width: 100%;
+    height: auto;
     grid-area: 2 / 1 / 5 / 6;
 }
 
 .btn {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 .btn--color-blue {
