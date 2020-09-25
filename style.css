@@ -39,12 +39,13 @@ body {
 .buttons {
     width: 100%;
     height: auto;
-    grid-area: 2 / 1 / 5 / 6;
+    grid-area: 2 / 1 / 6 / 5;
 }
 
 .btn {
     width: 100px;
     height: 100px;
+    border-radius: 8px;
 }
 
 .btn--color-blue {
