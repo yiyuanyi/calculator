@@ -22,23 +22,24 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 100px repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
     width: 650px;
-    height: 800px;
+    height: 750px;
     margin-top: 100px;
 }
 
 .display {
     grid-area: 1 / 1 / 1 / 5;
     border: solid 2px black;
-    height: 60px;
     text-align: center;
     background-color: #bbcca1;
+    margin-bottom: 10px;
 }
 
 #result {
     font-family: sans-serif;
+    font-size: 1.7rem;
 }
 
 .buttons {
