@@ -40,7 +40,10 @@ body {
 .buttons {
     grid-area: 2 / 1 / 6 / 5;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25%, 25%));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 120px));
+    grid-gap: 15px;
+    width: 100%;
+    justify-content: center;
 }
 
 .btn {
