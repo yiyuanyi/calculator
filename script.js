@@ -36,5 +36,17 @@ function operate(operator, num1, num2) {
     };
 };
 
-let result = getElementById('result');
-result.innerHTML = ;
+const result = document.getElementById('result');
+
+const btn = document.querySelectorAll('.btn');
+btn.forEach((button) => {
+    addEventListener('click', addValue)
+});
+
+function addValue() {
+    let value = button.keys(btn.data-value);
+    console.log(value);
+}
+
+
+
