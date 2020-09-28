@@ -19,7 +19,7 @@ body {
     display: grid;
     grid-template-rows: 100px repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
-    width: 550px;
+    min-width: 550px;
     height: 650px;
     margin: 150px auto;
     grid-gap: 10px;
