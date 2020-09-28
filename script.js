@@ -38,9 +38,13 @@ function operate(operator, num1, num2) {
 
 const result = document.getElementById('result');
 
+let total = 0;
+
 document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn')) {
-        console.log(e.target.innerHTML);
+        let number = parseInt(e.target.innerHTML);
+        total += number;
+        console.log(total);
     }
 });
 
