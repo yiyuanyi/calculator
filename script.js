@@ -38,15 +38,12 @@ function operate(operator, num1, num2) {
 
 const result = document.getElementById('result');
 
-const btn = document.querySelectorAll('.btn');
-btn.forEach((button) => {
-    addEventListener('click', addValue)
+document.getElementById('buttons').addEventListener('click', function(e) {
+    if (e.target && e.target.matches('button.btn')) {
+        console.log("yes");
+    }
 });
 
-function addValue() {
-    let value = button.keys(btn.data-value);
-    console.log(value);
-}
 
 
 
