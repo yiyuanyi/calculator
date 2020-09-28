@@ -40,7 +40,7 @@ const result = document.getElementById('result');
 
 document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn')) {
-        console.log("yes");
+        console.log(e.target.innerHTML);
     }
 });
 
