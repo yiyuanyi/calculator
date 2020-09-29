@@ -39,14 +39,15 @@ function operate(operator, num1, num2) {
 const result = document.getElementById('result');
 
 let total = 0;
+let number;
 
 document.getElementById('buttons').addEventListener('click', function(e) {
-    if (e.target && e.target.matches('button.btn')) {
-        let number = parseInt(e.target.innerHTML);
-        total += number;
-        console.log(total);
-    }
+    if (e.target && e.target.matches('button.btn.num')) {
+        let num = parseInt(e.target.innerHTML);
+        console.log(num);
+    } else if (e.target && e.)
 });
+
 
 
 
