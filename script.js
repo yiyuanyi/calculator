@@ -47,6 +47,13 @@ document.getElementById('buttons').addEventListener('click', function(e) {
     }
 });
 
+document.getElementById('clear').addEventListener('click', function(){
+    a = '';
+    b = '';
+    operator = '';
+    result.innerHTML = '';
+});
+
 document.getElementById('equals').addEventListener('click', operate(operator, a, b));
 
 
