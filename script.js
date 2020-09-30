@@ -14,24 +14,22 @@ function divide(a, b) {
     return a/b;
 };
 
-let num1;
-let num2;
+let a;
+let b;
 let operator;
 
-function operate(operator, num1, num2) {
-    let a = num1;
-    let b = num2;
+function operate(operator, a, b) {
     switch(operator) {
-        case '+':
+        case add:
             return add(a,b);
             break;
-        case '-':
+        case subtract:
             return subtract(a,b);
             break;
-        case '*':
+        case multiply:
             return multiply(a,b);
             break;
-        case '/':
+        case divide:
             return divide(a,b);
             break;
     };
@@ -39,15 +37,17 @@ function operate(operator, num1, num2) {
 
 const result = document.getElementById('result');
 
-let total = 0;
-let number;
-
 document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn.num')) {
-        num1 = parseInt(e.target.innerHTML);
-        console.log(num1);
-    } 
+        a = parseInt(e.target.innerHTML);
+        result.innerHTML += a;
+    } else if (e.target && e.target.matches('button.btn.operator')) {
+        operator = e.target.id;
+        console.log(e.target.id);
+    }
 });
+
+document.getElementById('equals').addEventListener('click', operate(operator, a, b));
 
 
 
