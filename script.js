@@ -17,7 +17,7 @@ function divide(a, b) {
 let a;
 let b;
 let operator;
-let result;
+let answer;
 
 const display = document.getElementById('result');
 
@@ -37,21 +37,22 @@ document.getElementById('buttons').addEventListener('click', function(e) {
     }
 });
 
-function operate(operator, a, b) {
+function operate() {
     switch(operator) {
         case 'add':
-            return add(a,b);
+            answer = add(a,b);
             break;
         case 'subtract':
-            return subtract(a,b);
+            answer = subtract(a,b);
             break;
         case 'multiply':
-            return multiply(a,b);
+            answer = multiply(a,b);
             break;
         case 'divide':
-            return divide(a,b);
+            answer = divide(a,b);
             break;
-    };
+    }
+    display.innerHTML = answer;
 };
 
 document.getElementById('clear').addEventListener('click', function(){
