@@ -26,13 +26,14 @@ const result = document.getElementById('result');
 document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn.num')) {
         if (a == null || a == undefined) {
-            result.innerHTML += this.innerHTML;
-            strA += this.innerHTML;
+            result.innerHTML += e.target.innerHTML;
+            strA += e.target.innerHTML;
             console.log(result);
         } else {
-            result.innerHTML += this.innerHTML;
-            strB += this.innerHTML;
+            result.innerHTML += e.target.innerHTML;
+            strB += e.target.innerHTML;
         }
+        a = parseInt(strA);
     } else if (e.target && e.target.matches('button.btn.operator')) {
         operator = (e.target.id).toString();
         console.log(operator);
