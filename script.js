@@ -14,26 +14,29 @@ function divide(a, b) {
     return a/b;
 };
 
-let a;
-let b;
 let operator;
 let answer;
+let strA = '';
+let strB = '';
+let a;
+let b;
 
-const display = document.getElementById('result');
+const result = document.getElementById('result');
 
 document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn.num')) {
-        if (operator == undefined) {
-        a = parseInt(e.target.innerHTML);
-        display.innerHTML += a;
+        if (a == null || a == undefined) {
+            result.innerHTML += this.innerHTML;
+            strA += this.innerHTML;
+            console.log(result);
         } else {
-            b = parseInt(e.target.innerHTML);
-            display.innerHTML += b;
+            result.innerHTML += this.innerHTML;
+            strB += this.innerHTML;
         }
     } else if (e.target && e.target.matches('button.btn.operator')) {
         operator = (e.target.id).toString();
         console.log(operator);
-        display.innerHTML += e.target.innerHTML;
+        result.innerHTML += e.target.innerHTML;
     }
 });
 
@@ -56,8 +59,8 @@ function operate() {
 };
 
 document.getElementById('clear').addEventListener('click', function(){
-    a = '';
-    b = '';
+    a = null;
+    b = null;
     operator = '';
     display.innerHTML = '';
 });
