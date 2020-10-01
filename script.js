@@ -16,24 +16,19 @@ function divide(a, b) {
 
 let operator;
 let answer;
-let strA = '';
-let strB = '';
+let num = '';
 let a;
 let b;
 
 const result = document.getElementById('result');
 
+//make e.target.innerHTML add number to string
+//make string convert to integer
+//assign integer to a or b
+//have operate function run when equals is pressed
 document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn.num')) {
-        if (a == null || a == undefined) {
             result.innerHTML += e.target.innerHTML;
-            strA += e.target.innerHTML;
-            console.log(result);
-        } else {
-            result.innerHTML += e.target.innerHTML;
-            strB += e.target.innerHTML;
-        }
-        a = parseInt(strA);
     } else if (e.target && e.target.matches('button.btn.operator')) {
         operator = (e.target.id).toString();
         console.log(operator);
@@ -56,7 +51,7 @@ function operate() {
             answer = divide(a,b);
             break;
     }
-    display.innerHTML = answer;
+    result.innerHTML = answer;
 };
 
 document.getElementById('clear').addEventListener('click', function(){
