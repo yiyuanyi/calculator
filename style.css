@@ -57,6 +57,7 @@ body {
     border: none;
     padding: 5px;
     margin: 5px;
+    box-shadow: 1px 1px #FFF;
 }
 
 .num {
