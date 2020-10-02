@@ -11,43 +11,36 @@ body {
     background-color: #13061f;
 }
 
-.horizontal-center {
-    justify-content: center;
-}
-
-.display {
-    grid-area: display;
-    height: 60px;
-    background-color: #194586;
-    text-align: center;
-}
-
-.container {
+.calculator {
     margin: 150px auto;
-    display: grid;
-    align-items: center;
-    grid-template-areas: 
-        'display display display display'
-        '7 8 9 ÷'
-        '4 5 6 x'
-        '1 2 3 -'
-        'C 0 = +';
     width: 300px;
     height: 400px;
     background-color: #0f2950;
 }
 
+.display {
+    display: flex;
+    height: 60px;
+    background-color: #194586;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
 #result {
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     color: #FFF;
 }
 
+.container {
+    display: grid;
+    align-items: center;
+    grid-template: repeat(4, 1fr) / repear (4, 1fr);
+}
+
 #buttons {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+    grid-area: 1 / 1 / 5 / 5;
 }
 
 .btn {
