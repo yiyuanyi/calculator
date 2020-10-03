@@ -83,8 +83,8 @@ function emptyDisplay() {
 
 document.getElementById('clear').addEventListener('click', function(){
     display.innerHTML = '';
-    a = [];
-    b = [];
+    a = '';
+    b = '';
     operator = '';
 });
 
