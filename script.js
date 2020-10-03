@@ -18,6 +18,8 @@ let operator;
 let answer;
 let arr1 = [];
 let arr2 = [];
+let a;
+let b;
 
 const result = document.getElementById('result');
 
@@ -30,8 +32,8 @@ document.getElementById('buttons').addEventListener('click', function(e) {
             result.innerHTML += e.target.innerHTML;
             if (operator == undefined) {
                 arr1 += e.target.innerHTML;
-            } else if (operator.length > 0 && arr1 != undefined) {
-                arr2 += e.target.HTML;
+            } else if (operator != undefined) {
+                arr2 += e.target.innerHTML;
             }
     } else if (e.target && e.target.matches('button.btn.operator')) {
         operator = (e.target.id).toString();
@@ -39,10 +41,10 @@ document.getElementById('buttons').addEventListener('click', function(e) {
     }
 });
 
-let a;
-let b;
-
 function operate() {
+    a = parseInt(arr1);
+    b = parseInt(arr2);
+
     switch(operator) {
         case 'add':
             answer = add(a,b);
@@ -64,7 +66,7 @@ document.getElementById('clear').addEventListener('click', function(){
     a = null;
     b = null;
     operator = '';
-    display.innerHTML = '';
+    result.innerHTML = '';
 });
 
 document.getElementById('equals').addEventListener('click', operate);
