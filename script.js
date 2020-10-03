@@ -26,6 +26,7 @@ let operator;
 
 btn.forEach(button => {
     button.addEventListener('click', (e) => {
+        setParams(e);
         renderParams(e);
     })
 });
@@ -49,7 +50,6 @@ function setParams(e) {
 
 //render parameters to display
 function renderParams(e) {
-    setParams(e);
     const params = document.createElement('p');
     if (a != undefined) {
         params.innerText += a;
@@ -63,16 +63,11 @@ function renderParams(e) {
     display.appendChild(params);
 }
 
-//should render the answer to the current sum
-function render(answer) {
-    const result = document.createElement('p');
-    result.innerText = answer;
-    display.appendChild(result);
-}
-
 function operate() {
+    a = parseInt(a);
+    b = parseInt(b);
     //in BODMAS order
-    switch(operator) {
+    switch(operator.value) {
         case '/':
             if (b == 0) {
                 answer = "Cannot divide by 0";
@@ -90,12 +85,20 @@ function operate() {
             answer = subtract(a,b);
             break;
     }
-    result.innerHTML = answer;
+    render(answer);
 };
 
-document.getElementById('clear').addEventListener('click', function(){
+//should render the answer to the current sum in display
+function render(answer) {
+    const result = document.createElement('p');
+    result.innerText = answer;
+    display.appendChild(result);
+    console.log(answer);
+}
+
+/*document.getElementById('clear').addEventListener('click', function(){
     result.innerHTML = '';
-});
+});*/
 
 document.getElementById('equals').addEventListener('click', operate);
 
