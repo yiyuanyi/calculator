@@ -16,8 +16,8 @@ function divide(a, b) {
 
 const display = document.getElementById('display');
 const btn = document.querySelectorAll('.btn');
-let a = [];
-let b = [];
+let a = '';
+let b = '';
 let operator;
 
 btn.forEach(button => {
@@ -30,13 +30,13 @@ btn.forEach(button => {
 function setParams(e) {
     if (e.target.matches('button.btn.num')) {
         if (operator == undefined) {
-            a += e.target.innerHTML;
+            a += e.target.value;
             console.log(a);
-            renderParameter(a);
+            render(a);
         } else {
             b += e.target.innerHTML;
             console.log(b);
-            renderParameter(b);
+            render(b);
         }
     } else if (e.target.matches('button.btn.operator')) {
         operator = e.target;
@@ -44,12 +44,12 @@ function setParams(e) {
     }
 }
 
-//render parameters to display
-function renderParameter(x) {
+//render to display
+function render(x) {
     emptyDisplay();
-    const params = document.createElement('p');
-    params.innerText = x;
-    display.appendChild(params);
+    const para = document.createElement('p');
+    para.innerText = x;
+    display.appendChild(para);
 }
 
 function operate() {
@@ -74,17 +74,8 @@ function operate() {
             answer = subtract(a,b);
             break;
     }
-    emptyDisplay();
     render(answer);
 };
-
-//should render the answer to the current sum in display
-function render(answer) {
-    const result = document.createElement('p');
-    result.innerText = answer;
-    display.appendChild(result);
-    console.log(answer);
-}
 
 function emptyDisplay() {
     display.innerHTML = '';
