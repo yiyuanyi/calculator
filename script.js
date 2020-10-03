@@ -33,33 +33,27 @@ btn.forEach(button => {
 
 //set a, b and operator, depending on which have already been assigned etc.
 function setParams(e) {
-    const params = document.createElement('p');
     if (e.target.matches('button.btn.num')) {
         if (operator == undefined) {
             a += e.target.innerHTML;
             console.log(a);
+            renderParameter(a);
         } else {
             b += e.target.innerHTML;
             console.log(b);
+            renderParameter(b);
         }
     } else if (e.target.matches('button.btn.operator')) {
         operator = e.target;
-        console.log(operator.value); 
+        console.log(operator.value);
+        renderParameter(operator.innerHTML);
     }
 }
 
 //render parameters to display
-function renderParams(e) {
+function renderParameter(e) {
     const params = document.createElement('p');
-    if (a != undefined) {
-        params.innerText += a;
-    };
-    if (operator != undefined) {
-        params.innerText += operator.innerHTML;
-    };
-    if (b != undefined) {
-        params.innerText += b;
-    };
+    params.innerText += e;
     display.appendChild(params);
 }
 
@@ -85,6 +79,7 @@ function operate() {
             answer = subtract(a,b);
             break;
     }
+    display.innerHTML = '';
     render(answer);
 };
 
@@ -96,9 +91,12 @@ function render(answer) {
     console.log(answer);
 }
 
-/*document.getElementById('clear').addEventListener('click', function(){
-    result.innerHTML = '';
-});*/
+document.getElementById('clear').addEventListener('click', function(){
+    display.innerHTML = '';
+    a = [];
+    b = [];
+    operator = '';
+});
 
 document.getElementById('equals').addEventListener('click', operate);
 
