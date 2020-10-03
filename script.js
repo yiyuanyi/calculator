@@ -29,18 +29,21 @@ btn.forEach(button => {
 //set a, b and operator
 function setParams(e) {
     if (e.target.matches('button.btn.num')) {
+        let num = e.target.value;
+        //if theres no operator assign value to a
+        //if operator is present then assign to b
+        //if answer is full then make a = answer and assign new value to b
         if (operator == undefined) {
             a += e.target.value;
             console.log(a);
             render(a);
         } else {
-            b += e.target.innerHTML;
+            b += e.target.value;
             console.log(b);
             render(b);
         }
     } else if (e.target.matches('button.btn.operator')) {
-        operator = e.target;
-        console.log(operator.value);
+        operator = e.target.value;
     }
 }
 
@@ -56,7 +59,7 @@ function operate() {
     a = parseInt(a);
     b = parseInt(b);
     //in BODMAS order
-    switch(operator.value) {
+    switch(operator) {
         case '/':
             if (b == 0) {
                 answer = "Cannot divide by 0";
