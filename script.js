@@ -28,25 +28,29 @@ function setParams(e) {
     let a = [];
     let b = [];
     let operator;
+    const params = document.createElement('p');
     if (e.target.matches('button.btn.num')) {
         if (operator == undefined) {
             a += e.target.innerHTML;
             console.log(a);
+            params.innerText += a;
         } else {
             b += e.target.innerHTML;
             console.log(b);
+            params.innerText += b;
         }
     } else if (e.target.matches('button.btn.operator')) {
         operator = e.target.value;
-        console.log(operator);
+        console.log(operator); 
+        params.innerText += operator;
     }
-
+    display.appendChild(params);
 }
 
 //should render the current calculation
 function render(params) {
     const calc = document.createElement('p');
-    calc.innerText = ;
+    //calc.innerText = ;
     display.appendChild(calc);
 }
 
@@ -72,12 +76,6 @@ function render(answer) {
 });*/
 
 function operate() {
-    if (answer != undefined && b != 0) {
-        a = answer;
-    } else {
-        a = parseInt(arr1);
-        b = parseInt(arr2);
-    }
     //in BODMAS order
     switch(operator) {
         case '/':
