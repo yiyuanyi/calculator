@@ -40,7 +40,7 @@ p {
     display: grid;
     align-items: center;
     margin: 10px;
-    grid-template: repeat(4, 1fr) / repear (4, 1fr);
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
 }
 
 #buttons {

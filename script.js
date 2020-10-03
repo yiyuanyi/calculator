@@ -14,30 +14,48 @@ function divide(a, b) {
     return a/b;
 };
 
-let operator;
-let answer;
-let arr1 = [];
-let arr2 = [];
-let a;
-let b;
+//going to change code so that it uses more functions and less global variables
+//helps to make cleaner code
+//append child instead of modifying innerHTML
 
-const result = document.getElementById('result');
+const display = document.getElementById('display');
+const btn = document.querySelectorAll('.btn');
 
-document.getElementById('buttons').addEventListener('click', function(e) {
+btn.forEach(button => {button.addEventListener('click', setParams)});
+
+//set a, b and operator, depending on which have already been assigned etc.
+function setParams(e) {
+    console.log(e.target.innerHTML);
+
+}
+
+//should render the current calculation
+function render(params) {
+    const calc = document.createElement('p');
+    //calc.innerText = ;
+    display.appendChild(calc);
+}
+
+//should render the answer to the current sum
+function render(answer) {
+    const result = document.createElement('p');
+    //result.innerText = ;
+    display.appendChild(result)
+}
+
+/*document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn.num')) {
             result.innerHTML += e.target.innerHTML;
             if (operator == undefined) {
                 arr1 += e.target.innerHTML;
             } else if (operator != undefined) {
                 arr2 += e.target.innerHTML;
-            } else if (operator.length > 0 && arr1 != [] && arr2 != []) {
-               
             }
     } else if (e.target && e.target.matches('button.btn.operator')) {
         operator = (e.target.id).toString();
         result.innerHTML += e.target.innerHTML;
     }
-});
+});*/
 
 function operate() {
     if (answer != undefined && b != 0) {
