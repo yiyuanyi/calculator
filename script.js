@@ -25,14 +25,28 @@ btn.forEach(button => {button.addEventListener('click', setParams)});
 
 //set a, b and operator, depending on which have already been assigned etc.
 function setParams(e) {
-    console.log(e.target.innerHTML);
+    let a = [];
+    let b = [];
+    let operator;
+    if (e.target.matches('button.btn.num')) {
+        if (operator == undefined) {
+            a += e.target.innerHTML;
+            console.log(a);
+        } else {
+            b += e.target.innerHTML;
+            console.log(b);
+        }
+    } else if (e.target.matches('button.btn.operator')) {
+        operator = e.target.value;
+        console.log(operator);
+    }
 
 }
 
 //should render the current calculation
 function render(params) {
     const calc = document.createElement('p');
-    //calc.innerText = ;
+    calc.innerText = ;
     display.appendChild(calc);
 }
 
@@ -64,22 +78,23 @@ function operate() {
         a = parseInt(arr1);
         b = parseInt(arr2);
     }
+    //in BODMAS order
     switch(operator) {
-        case 'add':
-            answer = add(a,b);
-            break;
-        case 'subtract':
-            answer = subtract(a,b);
-            break;
-        case 'multiply':
-            answer = multiply(a,b);
-            break;
-        case 'divide':
+        case '/':
             if (b == 0) {
                 answer = "Cannot divide by 0";
             } else {
                 answer = divide(a,b);
             }
+            break;
+        case '*':
+            answer = multiply(a,b);
+            break;
+        case '+':
+            answer = add(a,b);
+            break;
+        case '-':
+            answer = subtract(a,b);
             break;
     }
     result.innerHTML = answer;
