@@ -14,10 +14,6 @@ function divide(a, b) {
     return a/b;
 };
 
-//going to change code so that it uses more functions and less global variables
-//helps to make cleaner code
-//append child instead of modifying innerHTML
-
 const display = document.getElementById('display');
 const btn = document.querySelectorAll('.btn');
 let a = [];
@@ -30,7 +26,7 @@ btn.forEach(button => {
     })
 });
 
-//set a, b and operator, depending on which have already been assigned etc.
+//set a, b and operator
 function setParams(e) {
     if (e.target.matches('button.btn.num')) {
         if (operator == undefined) {
