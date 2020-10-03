@@ -20,7 +20,7 @@ body {
     box-shadow: 8px 8px #410739;
 }
 
-.display {
+#display {
     display: flex;
     height: 60px;
     background-color: #194586;
@@ -30,7 +30,7 @@ body {
     margin-bottom: 15px;
 }
 
-#result {
+p {
     font-family: sans-serif;
     font-size: 30px;
     color: #FFF;
