@@ -16,9 +16,8 @@ function divide(a, b) {
 
 let operator;
 let answer;
-let num = '';
-let a;
-let b;
+let arr1 = [];
+let arr2 = [];
 
 const result = document.getElementById('result');
 
@@ -29,12 +28,19 @@ const result = document.getElementById('result');
 document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn.num')) {
             result.innerHTML += e.target.innerHTML;
+            if (operator == undefined) {
+                arr1 += e.target.innerHTML;
+            } else if (operator.length > 0 && arr1 != undefined) {
+                arr2 += e.target.HTML;
+            }
     } else if (e.target && e.target.matches('button.btn.operator')) {
         operator = (e.target.id).toString();
-        console.log(operator);
         result.innerHTML += e.target.innerHTML;
     }
 });
+
+let a;
+let b;
 
 function operate() {
     switch(operator) {
