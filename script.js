@@ -30,7 +30,7 @@ document.getElementById('buttons').addEventListener('click', function(e) {
                 arr1 += e.target.innerHTML;
             } else if (operator != undefined) {
                 arr2 += e.target.innerHTML;
-            } else if (arr1 != [] && arr2 != []) {
+            } else if (operator.length > 0 && arr1 != [] && arr2 != []) {
                
             }
     } else if (e.target && e.target.matches('button.btn.operator')) {
@@ -40,9 +40,12 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 });
 
 function operate() {
-    a = parseInt(arr1);
-    b = parseInt(arr2);
-
+    if (answer != undefined && b != 0) {
+        a = answer;
+    } else {
+        a = parseInt(arr1);
+        b = parseInt(arr2);
+    }
     switch(operator) {
         case 'add':
             answer = add(a,b);
