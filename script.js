@@ -30,6 +30,8 @@ document.getElementById('buttons').addEventListener('click', function(e) {
                 arr1 += e.target.innerHTML;
             } else if (operator != undefined) {
                 arr2 += e.target.innerHTML;
+            } else if (arr1 != [] && arr2 != []) {
+               
             }
     } else if (e.target && e.target.matches('button.btn.operator')) {
         operator = (e.target.id).toString();
@@ -52,7 +54,11 @@ function operate() {
             answer = multiply(a,b);
             break;
         case 'divide':
-            answer = divide(a,b);
+            if (b == 0) {
+                answer = "Cannot divide by 0";
+            } else {
+                answer = divide(a,b);
+            }
             break;
     }
     result.innerHTML = answer;
