@@ -27,7 +27,6 @@ let operator;
 btn.forEach(button => {
     button.addEventListener('click', (e) => {
         setParams(e);
-        renderParams(e);
     })
 });
 
@@ -46,14 +45,14 @@ function setParams(e) {
     } else if (e.target.matches('button.btn.operator')) {
         operator = e.target;
         console.log(operator.value);
-        renderParameter(operator.innerHTML);
     }
 }
 
 //render parameters to display
-function renderParameter(e) {
+function renderParameter(x) {
+    emptyDisplay();
     const params = document.createElement('p');
-    params.innerText += e;
+    params.innerText = x;
     display.appendChild(params);
 }
 
@@ -79,7 +78,7 @@ function operate() {
             answer = subtract(a,b);
             break;
     }
-    display.innerHTML = '';
+    emptyDisplay();
     render(answer);
 };
 
@@ -89,6 +88,10 @@ function render(answer) {
     result.innerText = answer;
     display.appendChild(result);
     console.log(answer);
+}
+
+function emptyDisplay() {
+    display.innerHTML = '';
 }
 
 document.getElementById('clear').addEventListener('click', function(){
