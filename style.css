@@ -69,11 +69,13 @@ p {
 .operator {
     background-color: #f8b8d8;
     border-radius: 30%;
+    font-size: 2rem;
 }
 
 #equals {
     background-color: #2e734d;
     border-radius: 10%;
+    font-size: 2rem;
 }
 
 #clear {
