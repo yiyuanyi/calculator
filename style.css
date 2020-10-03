@@ -57,7 +57,7 @@ body {
     border: none;
     padding: 5px;
     margin: 5px;
-    box-shadow: 1px 1px #FFF;
+    box-shadow: 1px 1px #84dbeb;
 }
 
 .num {
@@ -67,7 +67,7 @@ body {
 }
 
 .operator {
-    background-color: #6ec4b5;
+    background-color: #f8b8d8;
     border-radius: 30%;
 }
 
