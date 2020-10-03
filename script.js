@@ -23,10 +23,6 @@ let b;
 
 const result = document.getElementById('result');
 
-//make e.target.innerHTML add number to string
-//make string convert to integer
-//assign integer to a or b
-//have operate function run when equals is pressed
 document.getElementById('buttons').addEventListener('click', function(e) {
     if (e.target && e.target.matches('button.btn.num')) {
             result.innerHTML += e.target.innerHTML;
@@ -63,9 +59,9 @@ function operate() {
 };
 
 document.getElementById('clear').addEventListener('click', function(){
-    a = null;
-    b = null;
-    operator = '';
+    arr1 = [];
+    arr2 = [];
+    operator = undefined;
     result.innerHTML = '';
 });
 
