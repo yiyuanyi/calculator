@@ -20,60 +20,55 @@ function divide(a, b) {
 
 const display = document.getElementById('display');
 const btn = document.querySelectorAll('.btn');
+let a = [];
+let b = [];
+let operator;
 
-btn.forEach(button => {button.addEventListener('click', setParams)});
+btn.forEach(button => {
+    button.addEventListener('click', (e) => {
+        renderParams(e);
+    })
+});
 
 //set a, b and operator, depending on which have already been assigned etc.
 function setParams(e) {
-    let a = [];
-    let b = [];
-    let operator;
     const params = document.createElement('p');
     if (e.target.matches('button.btn.num')) {
         if (operator == undefined) {
             a += e.target.innerHTML;
             console.log(a);
-            params.innerText += a;
         } else {
             b += e.target.innerHTML;
             console.log(b);
-            params.innerText += b;
         }
     } else if (e.target.matches('button.btn.operator')) {
-        operator = e.target.value;
-        console.log(operator); 
-        params.innerText += operator;
+        operator = e.target;
+        console.log(operator.value); 
     }
-    display.appendChild(params);
 }
 
-//should render the current calculation
-function render(params) {
-    const calc = document.createElement('p');
-    //calc.innerText = ;
-    display.appendChild(calc);
+//render parameters to display
+function renderParams(e) {
+    setParams(e);
+    const params = document.createElement('p');
+    if (a != undefined) {
+        params.innerText += a;
+    };
+    if (operator != undefined) {
+        params.innerText += operator.innerHTML;
+    };
+    if (b != undefined) {
+        params.innerText += b;
+    };
+    display.appendChild(params);
 }
 
 //should render the answer to the current sum
 function render(answer) {
     const result = document.createElement('p');
-    //result.innerText = ;
-    display.appendChild(result)
+    result.innerText = answer;
+    display.appendChild(result);
 }
-
-/*document.getElementById('buttons').addEventListener('click', function(e) {
-    if (e.target && e.target.matches('button.btn.num')) {
-            result.innerHTML += e.target.innerHTML;
-            if (operator == undefined) {
-                arr1 += e.target.innerHTML;
-            } else if (operator != undefined) {
-                arr2 += e.target.innerHTML;
-            }
-    } else if (e.target && e.target.matches('button.btn.operator')) {
-        operator = (e.target.id).toString();
-        result.innerHTML += e.target.innerHTML;
-    }
-});*/
 
 function operate() {
     //in BODMAS order
@@ -99,9 +94,6 @@ function operate() {
 };
 
 document.getElementById('clear').addEventListener('click', function(){
-    arr1 = [];
-    arr2 = [];
-    operator = undefined;
     result.innerHTML = '';
 });
 
