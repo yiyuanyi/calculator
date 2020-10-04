@@ -16,7 +16,7 @@ function setParams(e) {
         if (answer != '') {
             a = answer;
         }
-        
+
         if (operator == '') {
             a += num;
             render(a);
