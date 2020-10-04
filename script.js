@@ -55,19 +55,22 @@ function operate() {
                     answer = "Cannot divide by 0";
                 } else {
                     answer = a/b;
+                    answer = roundToTwo(answer);
                 }
                 break;
             case '*':
                 answer = a*b;
+                answer = roundToTwo(answer);
                 break;
             case '+':
                 answer = a+b;
+                answer = roundToTwo(answer);
                 break;
             case '-':
                 answer = a-b;
+                answer = roundToTwo(answer);
                 break;
         }
-        answer = roundToTwo(answer);
         render(answer);
         b = '';
     }
