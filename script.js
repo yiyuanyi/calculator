@@ -1,5 +1,6 @@
 const display = document.getElementById('display');
 const btn = document.querySelectorAll('.btn');
+
 let a = '';
 let b = '';
 let operator = '';
@@ -18,11 +19,9 @@ function setParams(e) {
         
         if (operator == '') {
             a += num;
-            console.log(a);
             render(a);
         } else {
             b += num;
-            console.log(b);
             render(b);
             }
         }
