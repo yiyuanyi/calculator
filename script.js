@@ -1,4 +1,4 @@
-function add(a, b) {
+/*function add(a, b) {
     return a + b;
 };
 
@@ -12,7 +12,7 @@ function multiply(a, b) {
 
 function divide(a, b) {
     return a/b;
-};
+};*/
 
 const display = document.getElementById('display');
 const btn = document.querySelectorAll('.btn');
@@ -22,39 +22,33 @@ let operator = '';
 let answer = '';
 
 btn.forEach(button => {
-    button.addEventListener('click', (e) => {
-        setParams(e);
-    })
+    button.addEventListener('click', (e) => setParams(e))
 });
 
-//set a, b and operator
 function setParams(e) {
     if (e.target.matches('button.btn.num')) {
         let num = e.target.value;
-        if (answer.length > 0) {
+        if (answer != '') {
+            a = answer;
+            b = '';
+        }
+        
+        if (operator == '') {
+            a += num;
+            console.log(a);
+            render(a);
+        } else {
             b += num;
             console.log(b);
             render(b);
-        } else {
-            if (operator == '') {
-                a += num;
-                console.log(a);
-                render(a);
-            } else {
-                b += num;
-                console.log(b);
-                render(b);
             }
         }
-        //if theres no operator assign value to a
-        //if operator is present then assign to b
-        //if answer is full then make a = answer and assign new value to b
-    } else if (e.target.matches('button.btn.operator')) {
+
+    if (e.target.matches('button.btn.operator')) {
         operator = e.target.value;
     }
 }
 
-//render to display
 function render(x) {
     emptyDisplay();
     const para = document.createElement('p');
@@ -65,23 +59,22 @@ function render(x) {
 function operate() {
     a = parseInt(a);
     b = parseInt(b);
-    //in BODMAS order
     switch(operator) {
         case '/':
             if (b == 0) {
                 answer = "Cannot divide by 0";
             } else {
-                answer = divide(a,b);
+                answer = a/b;
             }
             break;
         case '*':
-            answer = multiply(a,b);
+            answer = a*b;
             break;
         case '+':
-            answer = add(a,b);
+            answer = a+b;
             break;
         case '-':
-            answer = subtract(a,b);
+            answer = a-b;
             break;
     }
     render(answer);
@@ -96,6 +89,7 @@ document.getElementById('clear').addEventListener('click', function(){
     a = '';
     b = '';
     operator = '';
+    answer = '';
 });
 
 document.getElementById('equals').addEventListener('click', operate);
