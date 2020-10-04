@@ -18,7 +18,8 @@ const display = document.getElementById('display');
 const btn = document.querySelectorAll('.btn');
 let a = '';
 let b = '';
-let operator;
+let operator = '';
+let answer = '';
 
 btn.forEach(button => {
     button.addEventListener('click', (e) => {
@@ -30,18 +31,24 @@ btn.forEach(button => {
 function setParams(e) {
     if (e.target.matches('button.btn.num')) {
         let num = e.target.value;
+        if (answer.length > 0) {
+            b += num;
+            console.log(b);
+            render(b);
+        } else {
+            if (operator == '') {
+                a += num;
+                console.log(a);
+                render(a);
+            } else {
+                b += num;
+                console.log(b);
+                render(b);
+            }
+        }
         //if theres no operator assign value to a
         //if operator is present then assign to b
         //if answer is full then make a = answer and assign new value to b
-        if (operator == undefined) {
-            a += e.target.value;
-            console.log(a);
-            render(a);
-        } else {
-            b += e.target.value;
-            console.log(b);
-            render(b);
-        }
     } else if (e.target.matches('button.btn.operator')) {
         operator = e.target.value;
     }
