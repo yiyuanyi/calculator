@@ -44,29 +44,33 @@ function render(x) {
 }
 
 function operate() {
-    a = parseInt(a);
-    b = parseInt(b);
-    switch(operator) {
-        case '/':
-            if (b == 0) {
-                answer = "Cannot divide by 0";
-            } else {
-                answer = a/b;
-            }
-            break;
-        case '*':
-            answer = a*b;
-            break;
-        case '+':
-            answer = a+b;
-            break;
-        case '-':
-            answer = a-b;
-            break;
+    if (b == '') {
+        render(a);
+    } else {
+        a = parseInt(a);
+        b = parseInt(b);
+        switch(operator) {
+            case '/':
+                if (b == 0) {
+                    answer = "Cannot divide by 0";
+                } else {
+                    answer = a/b;
+                }
+                break;
+            case '*':
+                answer = a*b;
+                break;
+            case '+':
+                answer = a+b;
+                break;
+            case '-':
+                answer = a-b;
+                break;
+        }
+        answer = roundToTwo(answer);
+        render(answer);
+        b = '';
     }
-    answer = roundToTwo(answer);
-    render(answer);
-    b = '';
 };
 
 function roundToTwo(x) {
