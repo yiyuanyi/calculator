@@ -14,7 +14,6 @@ function setParams(e) {
         let num = e.target.value;
         if (answer != '') {
             a = answer;
-            b = '';
         }
         
         if (operator == '') {
@@ -62,6 +61,7 @@ function operate() {
             break;
     }
     render(answer);
+    b = '';
 };
 
 function emptyDisplay() {
