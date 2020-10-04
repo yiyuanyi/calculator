@@ -27,7 +27,12 @@ function setParams(e) {
         }
 
     if (e.target.matches('button.btn.operator')) {
-        operator = e.target.value;
+        if (operator != '') {
+            operate();
+            operator = e.target.value;
+        } else {
+            operator = e.target.value;
+        }
     }
 }
 
