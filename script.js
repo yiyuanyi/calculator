@@ -1,19 +1,3 @@
-/*function add(a, b) {
-    return a + b;
-};
-
-function subtract(a,b) {
-    return a - b;
-};
-
-function multiply(a, b) {
-    return a * b;
-};
-
-function divide(a, b) {
-    return a/b;
-};*/
-
 const display = document.getElementById('display');
 const btn = document.querySelectorAll('.btn');
 let a = '';
