@@ -64,9 +64,14 @@ function operate() {
             answer = a-b;
             break;
     }
+    answer = roundToTwo(answer);
     render(answer);
     b = '';
 };
+
+function roundToTwo(x) {
+    return +(Math.round(x + "e+2") + "e-2");
+}
 
 function emptyDisplay() {
     display.innerHTML = '';
