@@ -11,8 +11,9 @@ btn.forEach(button => {
 });
 
 function setParams(e) {
+    let input = e.target.value;
+
     if (e.target.matches('button.btn.num')) {
-        let input = e.target.value;
         if (answer != '') {
             a = answer;
         }
@@ -31,8 +32,13 @@ function setParams(e) {
         }
 
     if (e.target.matches('button.btn.dot')) {
-        a.includes('.') ? '' : a += input;
-        b.includes('.') ? '' : b += input;
+        if (operator == '') {
+            a.includes('.') ? '' : a += input;
+            render(a);
+        } else {
+            b.includes('.') ? '' : b += input;
+            render(b);
+        } 
     }
 
     if (e.target.matches('button.btn.operator')) {
@@ -42,8 +48,6 @@ function setParams(e) {
         } else {
             operator = input;
         }
-    }
-
 }
 
 function render(x) {
@@ -57,8 +61,8 @@ function operate() {
     if (b == '') {
         render(a);
     } else {
-        a = parseInt(a);
-        b = parseInt(b);
+        a = parseFloat(a);
+        b = parseFloat(b);
         switch(operator) {
             case '/':
                 if (b == 0) {
