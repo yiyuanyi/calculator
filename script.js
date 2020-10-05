@@ -18,10 +18,14 @@ function setParams(e) {
         }
 
         if (operator == '') {
-            a += num;
+            if (a.length < 12) {
+                a += num;
+            }
             render(a);
         } else {
-            b += num;
+            if (b.length < 12) {
+                b += num;
+            }
             render(b);
             }
         }
@@ -39,7 +43,6 @@ function setParams(e) {
 function render(x) {
     emptyDisplay();
     const para = document.createElement('p');
-    x = x.substring(0,15);
     para.innerText = x;
     display.appendChild(para);
 }
