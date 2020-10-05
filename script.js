@@ -39,6 +39,7 @@ function setParams(e) {
 function render(x) {
     emptyDisplay();
     const para = document.createElement('p');
+    x = x.substring(0,15);
     para.innerText = x;
     display.appendChild(para);
 }
@@ -55,30 +56,22 @@ function operate() {
                     answer = "Cannot divide by 0";
                 } else {
                     answer = a/b;
-                    answer = roundToTwo(answer);
                 }
                 break;
             case '*':
                 answer = a*b;
-                answer = roundToTwo(answer);
                 break;
             case '+':
                 answer = a+b;
-                answer = roundToTwo(answer);
                 break;
             case '-':
                 answer = a-b;
-                answer = roundToTwo(answer);
                 break;
         }
         render(answer);
         b = '';
     }
 };
-
-function roundToTwo(x) {
-    return +(Math.round(x + "e+2") + "e-2");
-}
 
 function emptyDisplay() {
     display.innerHTML = '';
