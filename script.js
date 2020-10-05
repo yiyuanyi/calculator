@@ -12,32 +12,38 @@ btn.forEach(button => {
 
 function setParams(e) {
     if (e.target.matches('button.btn.num')) {
-        let num = e.target.value;
+        let input = e.target.value;
         if (answer != '') {
             a = answer;
         }
 
         if (operator == '') {
             if (a.length < 12) {
-                a += num;
+                a += input;
             }
             render(a);
         } else {
             if (b.length < 12) {
-                b += num;
+                b += input;
             }
             render(b);
             }
         }
 
+    if (e.target.matches('button.btn.dot')) {
+        a.includes('.') ? '' : a += input;
+        b.includes('.') ? '' : b += input;
+    }
+
     if (e.target.matches('button.btn.operator')) {
         if (operator != '') {
             operate();
-            operator = e.target.value;
+            operator = input;
         } else {
-            operator = e.target.value;
+            operator = input;
         }
     }
+
 }
 
 function render(x) {
