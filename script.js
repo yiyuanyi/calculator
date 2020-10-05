@@ -14,7 +14,7 @@ function setParams(e) {
     let input = e.target.value;
 
     if (e.target.matches('button.btn.num')) {
-        if (answer != '') {
+        if (answer != '' && operator != '') {
             a = answer;
         }
 
@@ -79,21 +79,27 @@ function operate() {
             case '/':
                 if (b == 0) {
                     answer = "Cannot divide by 0";
+                    render(answer);
+                    answer = '';
+                    break;
                 } else {
                     answer = a/b;
+                    render(answer);
                 }
                 break;
             case '*':
                 answer = a*b;
+                render(answer);
                 break;
             case '+':
                 answer = a+b;
+                render(answer);
                 break;
             case '-':
                 answer = a-b;
+                render(answer);
                 break;
         }
-        render(answer);
         b = '';
     }
 };
