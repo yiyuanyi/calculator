@@ -14,6 +14,7 @@ function setParams(e) {
     let input = e.target.value;
 
     if (e.target.matches('button.btn.num')) {
+
         if (answer != '' && operator != '') {
             a = answer;
         }
@@ -49,6 +50,11 @@ function setParams(e) {
             b.includes('.') ? '' : b += input;
             render(b);
         } 
+    }
+
+    if (e.target.matches('button.btn.sign')) {
+        operator == '' ? a = -a : b = -b;
+        operator == '' ? render(a) : render(b);
     }
 
     if (e.target.matches('button.btn.operator')) {
