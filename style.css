@@ -85,7 +85,7 @@ p {
     border-radius: 10%;
 }
 
-#delete {
+.delete {
     background-color: #f3db54;
     border-radius: 10%;
     font-size: 2rem;
