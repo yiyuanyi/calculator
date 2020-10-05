@@ -69,11 +69,6 @@ function render(x) {
     display.appendChild(para);
 }
 
-function deleteLast(x) {
-    x = x.toString().slice(0, -1);
-    render(x);
-}
-
 function operate() {
     if (b == '') {
         render(a);
