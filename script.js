@@ -33,13 +33,7 @@ function setParams(e) {
         }
 
     if (e.target.matches('button.btn.delete')) {
-        if (operator == '') {
-            a = a.slice(0, -1);
-            render(a);
-        } else {
-            b = b.slice(0, -1);
-            render(b);
-            }
+        operator == '' ? (a = a.toString().slice(0, -1), render(a)) : (b = b.toString().slice(0, -1), render(b));
     }
 
     if (e.target.matches('button.btn.dot')) {
@@ -73,6 +67,11 @@ function render(x) {
     const para = document.createElement('p');
     para.innerText = x;
     display.appendChild(para);
+}
+
+function deleteLast(x) {
+    x = x.toString().slice(0, -1);
+    render(x);
 }
 
 function operate() {
