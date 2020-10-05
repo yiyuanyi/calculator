@@ -16,10 +16,6 @@ function setParams(e) {
 
     if (e.target.matches('button.btn.num')) {
 
-        if (answer != '' && operator != '') {
-            a = answer;
-        }
-
         if (operator == '') {
             if (a.length < 12) {
                 a += input;
@@ -48,8 +44,8 @@ function setParams(e) {
     }
 
     if (e.target.matches('button.btn.sign')) {
-        operator == '' ? a = -a : b = -b;
-        operator == '' ? render(a) : render(b);
+        b == '' ? a = -a : b = -b;
+        b == '' ? render(a) : render(b);
     }
 
     if (e.target.matches('button.btn.operator')) {
@@ -119,6 +115,7 @@ function operate() {
                 break;
         }
         b = '';
+        a = answer;
     }
 };
 
