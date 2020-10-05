@@ -91,13 +91,13 @@ p {
     font-size: 2rem;
 }
 
-#dot {
+.dot {
     background-color: #eb9d45;
     border-radius: 10%;
     font-size: 2rem;
 }
 
-#sign {
+.sign {
     background-color: #97cc78;
     border-radius: 10%;
     font-size: 2rem;
