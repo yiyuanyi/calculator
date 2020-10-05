@@ -31,6 +31,16 @@ function setParams(e) {
             }
         }
 
+    if (e.target.matches('button.btn.delete')) {
+        if (operator == '') {
+            a = a.slice(0, -1);
+            render(a);
+        } else {
+            b = b.slice(0, -1);
+            render(b);
+            }
+    }
+
     if (e.target.matches('button.btn.dot')) {
         if (operator == '') {
             a.includes('.') ? '' : a += input;
@@ -49,6 +59,7 @@ function setParams(e) {
             operator = input;
         }
     }
+
 }
 
 function render(x) {
