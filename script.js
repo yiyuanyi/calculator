@@ -1,4 +1,5 @@
 const display = document.getElementById('display');
+const history = document.getElementById('history');
 const btn = document.querySelectorAll('.btn');
 
 let a = '';
@@ -43,7 +44,7 @@ function setParams(e) {
         } else {
             b.includes('.') ? '' : b += input;
             render(b);
-        } 
+        }
     }
 
     if (e.target.matches('button.btn.sign')) {
@@ -69,7 +70,19 @@ function render(x) {
     display.appendChild(para);
 }
 
+function renderHistory(x) {
+    const para = document.createElement('p');
+    para.innerText = x;
+    history.appendChild(para);
+}
+
 function operate() {
+    if (answer == '') {
+        renderHistory(a + ' ');
+    }
+    renderHistory(operator+' ');
+    renderHistory(b + ' ');
+
     if (b == '') {
         render(a);
     } else {
@@ -109,6 +122,7 @@ function emptyDisplay() {
 }
 
 document.getElementById('clear').addEventListener('click', function(){
+    history.innerHTML = '';
     display.innerHTML = '';
     a = '';
     b = '';
