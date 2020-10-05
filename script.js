@@ -48,6 +48,7 @@ function setParams(e) {
         } else {
             operator = input;
         }
+    }
 }
 
 function render(x) {
