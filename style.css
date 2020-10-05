@@ -15,7 +15,7 @@ body {
     margin: 220px auto;
     text-align: center;
     width: 300px;
-    height: 450px;
+    height: 470px;
     background-color: #0f2950;
     box-shadow: 8px 8px #410739;
     border-radius: 2%;
@@ -23,7 +23,7 @@ body {
 
 #history {
     display: flex;
-    height: 20px;
+    height: 15px;
 }
 
 #display {
@@ -32,7 +32,7 @@ body {
     background-color: #194586;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top:15px;
     margin-bottom: 15px;
 }
 
