@@ -67,6 +67,7 @@ function render(x) {
     emptyDisplay();
     const para = document.createElement('p');
     para.innerText = x;
+    para.innerHTML.length <= 15 ? para.innerHTML : para.innerHTML = para.innerHTML.substring(0,15);
     display.appendChild(para);
 }
 
@@ -76,12 +77,16 @@ function renderHistory(x) {
     history.appendChild(para);
 }
 
+function emptyDisplay() {
+    display.innerHTML = '';
+}
+
 function operate() {
     if (answer == '') {
-        renderHistory(a + ' ');
+        renderHistory(a);
     }
-    renderHistory(operator+' ');
-    renderHistory(b + ' ');
+    renderHistory(operator);
+    renderHistory(b);
 
     if (b == '') {
         render(a);
@@ -116,10 +121,6 @@ function operate() {
         b = '';
     }
 };
-
-function emptyDisplay() {
-    display.innerHTML = '';
-}
 
 document.getElementById('clear').addEventListener('click', function(){
     history.innerHTML = '';
