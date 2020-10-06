@@ -15,13 +15,13 @@ function setParams(e) {
     let input = e.target.value;
 
     if (e.target.matches('button.btn.num')) {
+        empty(history);
 
         if (operator == '') {
             if (a.length < 12) {
                 a += input;
             }
             render(a);
-            if (answer == '') {renderHistory(a)};
         } else {
             if (b.length < 12) {
                 b += input;
@@ -61,7 +61,7 @@ function setParams(e) {
 }
 
 function render(x) {
-    emptyDisplay();
+    empty(display);
     const para = document.createElement('p');
     para.innerText = x;
     x == "Cannot divide by 0" || para.innerHTML.length <= 15 ? para.innerHTML : para.innerHTML = para.innerHTML.substring(0,15);
@@ -74,15 +74,11 @@ function renderHistory(x) {
     history.appendChild(para);
 }
 
-function emptyDisplay() {
-    display.innerHTML = '';
+function empty(x) {
+    x.innerHTML = '';
 }
 
 function operate() {
-
-    if (a != '' && b != 0) {renderHistory(operator)}
-    if (a != '' && b != 0) {renderHistory(b)};
-    
     if (b == '') {
         render(a);
     } else {
@@ -113,6 +109,10 @@ function operate() {
                 render(answer);
                 break;
         }
+        
+        if (a != '') {renderHistory(a)};
+        if (a != '' && b != 0) {renderHistory(operator)};
+        if (a != '' && b != 0) {renderHistory(b)};
         if (answer != '') {renderHistory('=' + answer)}
 
         b = '';
