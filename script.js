@@ -11,7 +11,7 @@ btn.forEach(button => {
     button.addEventListener('click', (e) => setParams(e))
 });
 
-function setParams(e) {
+const setParams = (e) =>{
     let input = e.target.value;
 
     if (e.target.matches('button.btn.num')) {
@@ -60,7 +60,7 @@ function setParams(e) {
 
 }
 
-function render(x) {
+const render = (x) => {
     emptyDisplay();
     const para = document.createElement('p');
     para.innerText = x;
@@ -68,17 +68,17 @@ function render(x) {
     display.appendChild(para);
 }
 
-function renderHistory(x) {
+const renderHistory = (x) => {
     const para = document.createElement('p');
     para.innerText = x;
     history.appendChild(para);
 }
 
-function emptyDisplay() {
+const emptyDisplay = () => {
     display.innerHTML = '';
 }
 
-function operate() {
+const operate = () => {
 
     if (a != '' && b != 0 && operator != '/') {renderHistory(operator)}
     if (a != '' && b != 0) {renderHistory(b)};
