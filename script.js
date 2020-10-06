@@ -80,7 +80,7 @@ function emptyDisplay() {
 
 function operate() {
 
-    if (a != '' && b != 0 && operator != '/') {renderHistory(operator)}
+    if (a != '' && b != 0) {renderHistory(operator)}
     if (a != '' && b != 0) {renderHistory(b)};
     
     if (b == '') {
