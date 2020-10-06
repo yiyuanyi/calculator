@@ -63,7 +63,7 @@ function render(x) {
     emptyDisplay();
     const para = document.createElement('p');
     para.innerText = x;
-    para.innerHTML.length <= 15 ? para.innerHTML : para.innerHTML = para.innerHTML.substring(0,15);
+    x == "Cannot divide by 0" || para.innerHTML.length <= 15 ? para.innerHTML : para.innerHTML = para.innerHTML.substring(0,15);
     display.appendChild(para);
 }
 
@@ -115,7 +115,7 @@ function operate() {
                 break;
         }
         b = '';
-        a = answer;
+        answer == '' ? '' :  a = answer;
     }
 };
 
