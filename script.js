@@ -21,6 +21,7 @@ function setParams(e) {
                 a += input;
             }
             render(a);
+            if (answer == '') {renderHistory(a)};
         } else {
             if (b.length < 12) {
                 b += input;
@@ -78,12 +79,10 @@ function emptyDisplay() {
 }
 
 function operate() {
-    if (answer == '') {
-        renderHistory(a);
-    }
-    renderHistory(operator);
-    renderHistory(b);
 
+    if (a != '' && b != 0 && operator != '/') {renderHistory(operator)}
+    if (a != '' && b != 0) {renderHistory(b)};
+    
     if (b == '') {
         render(a);
     } else {
@@ -114,6 +113,7 @@ function operate() {
                 render(answer);
                 break;
         }
+        
         b = '';
         answer == '' ? '' :  a = answer;
     }
