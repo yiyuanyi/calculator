@@ -113,7 +113,8 @@ function operate() {
                 render(answer);
                 break;
         }
-        
+        if (answer != '') {renderHistory('=' + answer)}
+
         b = '';
         answer == '' ? '' :  a = answer;
     }
